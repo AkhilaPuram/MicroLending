@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:zeebe="http://camunda.org/schema/zeebe/1.0" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:modeler="http://camunda.org/schema/modeler/1.0" id="Definitions_1tdsiua" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="5.17.0" modeler:executionPlatform="Camunda Cloud" modeler:executionPlatformVersion="8.3.0">
+  <bpmn:process id="Process_GetEMI" name="Loan" isExecutable="true">
+    <bpmn:extensionElements>
+      <zeebe:userTaskForm id="UserTaskForm_2p0rm4j">{
+  "components": [
+    {
+      "label": "loanamount",
+      "type": "number",
+      "layout": {
+        "row": "Row_1u3i3af",
+        "columns": null
+      },
+      "id": "Field_0z4hztv",
+      "key": "loanamount"
+    },
+    {
+      "label": "noofmonths",
+      "type": "number",
+      "layout": {
+        "row": "Row_1j8203g",
+        "columns": null
+      },
+      "id": "Field_12rom5a",
+      "key": "noofmonths"
+    },
+    {
+      "label": "IntrestRate",
+      "type": "number",
+      "layout": {
+        "row": "Row_1t1q2d0",
+        "columns": null
+      },
+      "id": "Field_06ed9i7",
+      "key": "rate"
+    },
+    {
+      "label": "EMI",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_0cjcfd2",
+        "columns": null
+      },
+      "id": "Field_0gmv4oz",
+      "key": "EMI"
+    }
+  ],
+  "type": "default",
+  "id": "Form_15u2cqh",
+  "executionPlatform": "Camunda Cloud",
+  "executionPlatformVersion": "8.3.0",
+  "exporter": {
+    "name": "Camunda Modeler",
+    "version": "5.17.0"
+  },
+  "schemaVersion": 12
+}</zeebe:userTaskForm>
+    </bpmn:extensionElements>
+    <bpmn:startEvent id="StartEvent_1" name="start">
+      <bpmn:outgoing>Flow_03o2tps</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:sequenceFlow id="Flow_03o2tps" sourceRef="StartEvent_1" targetRef="Activity_0e58uv4" />
+    <bpmn:sequenceFlow id="Flow_0n9simh" sourceRef="Activity_0e58uv4" targetRef="Event_1y480za" />
+    <bpmn:endEvent id="Event_1y480za" name="End">
+      <bpmn:incoming>Flow_0n9simh</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:userTask id="Activity_0e58uv4" name="Enter loan details">
+      <bpmn:extensionElements>
+        <zeebe:formDefinition formKey="camunda-forms:bpmn:UserTaskForm_2p0rm4j" />
+        <zeebe:ioMapping>
+          <zeebe:output source="=loanamount" target="loanamount" />
+          <zeebe:output source="=noofmonths" target="noofmonths" />
+          <zeebe:output source="=(loanamount*noofmonths*rate)/1200" target="Intrest" />
+          <zeebe:output source="=rate" target="rate" />
+          <zeebe:output source="=(loanamount+Intrest)/noofmonths" target="EMI" />
+          <zeebe:output source="=LoanType" target="LoanType" />
+        </zeebe:ioMapping>
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_03o2tps</bpmn:incoming>
+      <bpmn:outgoing>Flow_0n9simh</bpmn:outgoing>
+    </bpmn:userTask>
+  </bpmn:process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Process_GetEMI">
+      <bpmndi:BPMNShape id="_BPMNShape_StartEvent_2" bpmnElement="StartEvent_1">
+        <dc:Bounds x="179" y="99" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="186" y="142" width="22" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_1y480za_di" bpmnElement="Event_1y480za">
+        <dc:Bounds x="592" y="99" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="600" y="142" width="20" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1ujxpbm_di" bpmnElement="Activity_0e58uv4">
+        <dc:Bounds x="330" y="77" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Flow_03o2tps_di" bpmnElement="Flow_03o2tps">
+        <di:waypoint x="215" y="117" />
+        <di:waypoint x="330" y="117" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0n9simh_di" bpmnElement="Flow_0n9simh">
+        <di:waypoint x="430" y="117" />
+        <di:waypoint x="592" y="117" />
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>
