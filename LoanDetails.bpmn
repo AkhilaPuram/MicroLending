@@ -1,0 +1,488 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:zeebe="http://camunda.org/schema/zeebe/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bioc="http://bpmn.io/schema/bpmn/biocolor/1.0" xmlns:color="http://www.omg.org/spec/BPMN/non-normative/color/1.0" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:modeler="http://camunda.org/schema/modeler/1.0" id="Definitions_02l3kuu" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="5.16.0" modeler:executionPlatform="Camunda Cloud" modeler:executionPlatformVersion="8.3.0">
+  <bpmn:process id="LoanApplication" name="LoanApplication" isExecutable="true">
+    <bpmn:extensionElements>
+      <zeebe:userTaskForm id="userTaskForm_3qju3di">{
+  "components": [
+    {
+      "text": "# Loan Application Form",
+      "label": "Text view",
+      "type": "text",
+      "layout": {
+        "row": "Row_1ctc2ew",
+        "columns": null
+      },
+      "id": "Field_1kmctpm"
+    },
+    {
+      "values": [
+        {
+          "label": "EducationLoan",
+          "value": "EducationLoan"
+        },
+        {
+          "label": "Business Loan",
+          "value": "Business Loan"
+        },
+        {
+          "label": "Home Improvement Loan",
+          "value": "Home Improvement Loan"
+        }
+      ],
+      "label": "Loan Type",
+      "type": "select",
+      "layout": {
+        "row": "Row_0nf7qr3",
+        "columns": 8
+      },
+      "id": "Field_0depafz",
+      "key": "Loantype",
+      "validate": {
+        "required": true
+      }
+    },
+    {
+      "label": "Loan Amount",
+      "type": "number",
+      "layout": {
+        "row": "Row_0nf7qr3",
+        "columns": null
+      },
+      "id": "Field_1nkpnt6",
+      "key": "Loanamount",
+      "validate": {
+        "required": true
+      }
+    },
+    {
+      "label": "First Name",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_14j9cgj",
+        "columns": 8
+      },
+      "id": "Field_1mgv8zm",
+      "key": "Firstname",
+      "validate": {
+        "required": true
+      }
+    },
+    {
+      "label": "Last Name",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_14j9cgj",
+        "columns": null
+      },
+      "id": "Field_0k7844b",
+      "key": "Lastname",
+      "validate": {
+        "required": true
+      }
+    },
+    {
+      "label": "Phone Number",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_1l245wq",
+        "columns": 8
+      },
+      "id": "Field_0yg9w85",
+      "key": "Phonenumber",
+      "validate": {
+        "required": true,
+        "minLength": 10,
+        "maxLength": 10
+      }
+    },
+    {
+      "label": "Email",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_1l245wq",
+        "columns": null
+      },
+      "id": "Field_0n6tmlg",
+      "key": "Email",
+      "validate": {
+        "required": true,
+        "validationType": "email"
+      }
+    }
+  ],
+  "type": "default",
+  "id": "LoanForm",
+  "executionPlatform": "Camunda Cloud",
+  "executionPlatformVersion": "8.3.0",
+  "exporter": {
+    "name": "Camunda Modeler",
+    "version": "5.16.0"
+  },
+  "schemaVersion": 11
+}</zeebe:userTaskForm>
+      <zeebe:userTaskForm id="userTaskForm_3v4dnjt">{
+  "components": [
+    {
+      "text": "# Loan Application Form",
+      "label": "Text view",
+      "type": "text",
+      "layout": {
+        "row": "Row_02oj12j",
+        "columns": null
+      },
+      "id": "Field_0obchdx"
+    },
+    {
+      "values": [
+        {
+          "label": "EducationLoan",
+          "value": "EducationLoan"
+        },
+        {
+          "label": "Business Loan",
+          "value": "Business Loan"
+        },
+        {
+          "label": "Home Improvement Loan",
+          "value": "Home Improvement Loan"
+        }
+      ],
+      "label": "Loan Type",
+      "type": "select",
+      "layout": {
+        "row": "Row_1n2ungw",
+        "columns": 8
+      },
+      "id": "Field_1tm4we4",
+      "key": "Loantype",
+      "validate": {
+        "required": true
+      },
+      "readonly": true
+    },
+    {
+      "label": "Loan Amount",
+      "type": "number",
+      "layout": {
+        "row": "Row_1n2ungw",
+        "columns": null
+      },
+      "id": "Field_0zmate4",
+      "key": "Loanamount",
+      "readonly": true
+    },
+    {
+      "label": "First Name ",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_1ds4ur6",
+        "columns": null
+      },
+      "id": "Field_0coxp3y",
+      "key": "Firstname",
+      "validate": {
+        "required": true
+      },
+      "readonly": true
+    },
+    {
+      "label": "Last Name",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_1ds4ur6",
+        "columns": null
+      },
+      "id": "Field_0wgsahw",
+      "key": "Lastname",
+      "validate": {
+        "required": true
+      },
+      "readonly": true
+    },
+    {
+      "label": "Phone Number",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_05kftm6",
+        "columns": null
+      },
+      "id": "Field_1mfeiwy",
+      "key": "Phonenumber",
+      "validate": {
+        "required": true,
+        "minLength": 10,
+        "maxLength": 10
+      },
+      "readonly": true
+    },
+    {
+      "label": "Email",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_05kftm6",
+        "columns": null
+      },
+      "id": "Field_1rttg4c",
+      "key": "Email",
+      "validate": {
+        "required": true,
+        "validationType": "email"
+      },
+      "readonly": true
+    }
+  ],
+  "type": "default",
+  "id": "Loanform2",
+  "executionPlatform": "Camunda Cloud",
+  "executionPlatformVersion": "8.3.0",
+  "exporter": {
+    "name": "Camunda Modeler",
+    "version": "5.16.0"
+  },
+  "schemaVersion": 11
+}</zeebe:userTaskForm>
+      <zeebe:userTaskForm id="userTaskForm_33odd6e">{
+  "components": [
+    {
+      "text": "# Loan Application Form",
+      "label": "Text view",
+      "type": "text",
+      "layout": {
+        "row": "Row_02oj12j",
+        "columns": null
+      },
+      "id": "Field_0obchdx"
+    },
+    {
+      "values": [
+        {
+          "label": "EducationLoan",
+          "value": "EducationLoan"
+        },
+        {
+          "label": "Business Loan",
+          "value": "Business Loan"
+        },
+        {
+          "label": "Home Improvement Loan",
+          "value": "Home Improvement Loan"
+        }
+      ],
+      "label": "Loan Type",
+      "type": "select",
+      "layout": {
+        "row": "Row_1n2ungw",
+        "columns": 8
+      },
+      "id": "Field_1tm4we4",
+      "key": "Loantype",
+      "validate": {
+        "required": true
+      },
+      "readonly": true
+    },
+    {
+      "label": "Loan Amount",
+      "type": "number",
+      "layout": {
+        "row": "Row_1n2ungw",
+        "columns": null
+      },
+      "id": "Field_0zmate4",
+      "key": "Loanamount",
+      "readonly": true
+    },
+    {
+      "label": "First Name ",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_1ds4ur6",
+        "columns": null
+      },
+      "id": "Field_0coxp3y",
+      "key": "Firstname",
+      "validate": {
+        "required": true
+      },
+      "readonly": true
+    },
+    {
+      "label": "Last Name",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_1ds4ur6",
+        "columns": null
+      },
+      "id": "Field_0wgsahw",
+      "key": "Lastname",
+      "validate": {
+        "required": true
+      },
+      "readonly": true
+    },
+    {
+      "label": "Phone Number",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_05kftm6",
+        "columns": null
+      },
+      "id": "Field_1mfeiwy",
+      "key": "Phonenumber",
+      "validate": {
+        "required": true,
+        "minLength": 10,
+        "maxLength": 10
+      },
+      "readonly": true
+    },
+    {
+      "label": "Email",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_05kftm6",
+        "columns": null
+      },
+      "id": "Field_1rttg4c",
+      "key": "Email",
+      "validate": {
+        "required": true,
+        "validationType": "email"
+      },
+      "readonly": true
+    }
+  ],
+  "type": "default",
+  "id": "Loanform2",
+  "executionPlatform": "Camunda Cloud",
+  "executionPlatformVersion": "8.3.0",
+  "exporter": {
+    "name": "Camunda Modeler",
+    "version": "5.16.0"
+  },
+  "schemaVersion": 11
+}</zeebe:userTaskForm>
+    </bpmn:extensionElements>
+    <bpmn:startEvent id="StartEvent_1" name="Start">
+      <bpmn:outgoing>Flow_06pg9wd</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:sequenceFlow id="Flow_06pg9wd" sourceRef="StartEvent_1" targetRef="Activity_10cnu02" />
+    <bpmn:sequenceFlow id="Flow_1eynp45" sourceRef="Activity_10cnu02" targetRef="Activity_0x2bk8y" />
+    <bpmn:userTask id="Activity_10cnu02" name="User Details">
+      <bpmn:extensionElements>
+        <zeebe:formDefinition formKey="camunda-forms:bpmn:userTaskForm_3qju3di" />
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_06pg9wd</bpmn:incoming>
+      <bpmn:outgoing>Flow_1eynp45</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:endEvent id="Event_0vv7lou" name="End">
+      <bpmn:incoming>Flow_14uwu01</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:sequenceFlow id="Flow_14uwu01" sourceRef="Activity_1o52ik8" targetRef="Event_0vv7lou" />
+    <bpmn:userTask id="Activity_1o52ik8" name="Manager Approver">
+      <bpmn:extensionElements>
+        <zeebe:formDefinition formKey="camunda-forms:bpmn:userTaskForm_33odd6e" />
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_0nz3zd1</bpmn:incoming>
+      <bpmn:outgoing>Flow_14uwu01</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:userTask id="Activity_0x2bk8y" name="Reviewer">
+      <bpmn:extensionElements>
+        <zeebe:formDefinition formKey="camunda-forms:bpmn:userTaskForm_3v4dnjt" />
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_1eynp45</bpmn:incoming>
+      <bpmn:outgoing>Flow_1ruw3xq</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:sequenceFlow id="Flow_1ruw3xq" sourceRef="Activity_0x2bk8y" targetRef="Activity_1omsh0i" />
+    <bpmn:endEvent id="Event_0zmx5yi" name="End">
+      <bpmn:incoming>Flow_0ks267p</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:businessRuleTask id="Activity_1omsh0i" name="Check if approval required?">
+      <bpmn:extensionElements>
+        <zeebe:calledDecision decisionId="Decesion_ApprovalRequired" resultVariable="ApprovalRequired" />
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_1ruw3xq</bpmn:incoming>
+      <bpmn:outgoing>Flow_07e6oup</bpmn:outgoing>
+    </bpmn:businessRuleTask>
+    <bpmn:exclusiveGateway id="Gateway_1x6ahtr">
+      <bpmn:incoming>Flow_07e6oup</bpmn:incoming>
+      <bpmn:outgoing>Flow_0nz3zd1</bpmn:outgoing>
+      <bpmn:outgoing>Flow_0ks267p</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:sequenceFlow id="Flow_07e6oup" sourceRef="Activity_1omsh0i" targetRef="Gateway_1x6ahtr" />
+    <bpmn:sequenceFlow id="Flow_0nz3zd1" sourceRef="Gateway_1x6ahtr" targetRef="Activity_1o52ik8">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">=ApprovalRequired = "True"</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="Flow_0ks267p" sourceRef="Gateway_1x6ahtr" targetRef="Event_0zmx5yi">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">=ApprovalRequired = "False"</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
+  </bpmn:process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="LoanApplication">
+      <bpmndi:BPMNShape id="_BPMNShape_StartEvent_2" bpmnElement="StartEvent_1" bioc:stroke="#5b176d" bioc:fill="#e1bee7" color:background-color="#e1bee7" color:border-color="#5b176d">
+        <dc:Bounds x="152" y="102" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="158" y="145" width="24" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_04fftox_di" bpmnElement="Activity_10cnu02" bioc:stroke="#831311" bioc:fill="#ffcdd2" color:background-color="#ffcdd2" color:border-color="#831311">
+        <dc:Bounds x="350" y="80" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_0vv7lou_di" bpmnElement="Event_0vv7lou" bioc:stroke="#5b176d" bioc:fill="#e1bee7" color:background-color="#e1bee7" color:border-color="#5b176d">
+        <dc:Bounds x="1262" y="102" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1271" y="145" width="20" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0jjbko1_di" bpmnElement="Activity_0x2bk8y" bioc:stroke="#831311" bioc:fill="#ffcdd2" color:background-color="#ffcdd2" color:border-color="#831311">
+        <dc:Bounds x="540" y="80" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1iuaiae_di" bpmnElement="Activity_1omsh0i" bioc:stroke="#831311" bioc:fill="#ffcdd2" color:background-color="#ffcdd2" color:border-color="#831311">
+        <dc:Bounds x="670" y="80" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_07xnhpu_di" bpmnElement="Activity_1o52ik8" bioc:stroke="#6b3c00" bioc:fill="#ffe0b2" color:background-color="#ffe0b2" color:border-color="#6b3c00">
+        <dc:Bounds x="990" y="80" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Gateway_1x6ahtr_di" bpmnElement="Gateway_1x6ahtr" isMarkerVisible="true">
+        <dc:Bounds x="845" y="95" width="50" height="50" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_0zmx5yi_di" bpmnElement="Event_0zmx5yi" bioc:stroke="#5b176d" bioc:fill="#e1bee7" color:background-color="#e1bee7" color:border-color="#5b176d">
+        <dc:Bounds x="852" y="262" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="860" y="308" width="20" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Flow_06pg9wd_di" bpmnElement="Flow_06pg9wd">
+        <di:waypoint x="188" y="120" />
+        <di:waypoint x="350" y="120" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1eynp45_di" bpmnElement="Flow_1eynp45">
+        <di:waypoint x="450" y="120" />
+        <di:waypoint x="540" y="120" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_14uwu01_di" bpmnElement="Flow_14uwu01">
+        <di:waypoint x="1090" y="120" />
+        <di:waypoint x="1262" y="120" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1ruw3xq_di" bpmnElement="Flow_1ruw3xq">
+        <di:waypoint x="640" y="120" />
+        <di:waypoint x="670" y="120" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_07e6oup_di" bpmnElement="Flow_07e6oup">
+        <di:waypoint x="770" y="120" />
+        <di:waypoint x="845" y="120" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0nz3zd1_di" bpmnElement="Flow_0nz3zd1">
+        <di:waypoint x="895" y="120" />
+        <di:waypoint x="990" y="120" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0ks267p_di" bpmnElement="Flow_0ks267p">
+        <di:waypoint x="870" y="145" />
+        <di:waypoint x="870" y="262" />
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>
